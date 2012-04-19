@@ -6,6 +6,7 @@
     <version>2.0.2</version>
     <artifactId>bootstrap</artifactId>
     <packaging>jar</packaging>
+
     <dependencies>
         <dependency>
             <groupId>jquery</groupId>
@@ -13,4 +14,12 @@
             <version>1.7.1</version>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>webjars.github.com</id>
+        <url>file:///${basedir}/../webjars.github.com/m2/</url>
+      </repository>
+    </distributionManagement>
+
 </project>
