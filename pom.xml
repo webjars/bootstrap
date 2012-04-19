@@ -2,14 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.github.twitter</groupId>
+    <artifactId>bootstrap</artifactId>
     <name>bootstrap</name>
     <version>2.0.2</version>
-    <artifactId>bootstrap</artifactId>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>jquery</groupId>
+            <groupId>com.jquery</groupId>
             <artifactId>jquery</artifactId>
             <version>1.7.1</version>
         </dependency>
