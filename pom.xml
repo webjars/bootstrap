@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>2.2.3-SNAPSHOT</version>
+    <version>2.2.2-1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -51,6 +51,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstreamVersion>2.2.2</upstreamVersion>
         <sourceUrl>https://github.com/twitter/bootstrap/raw/811b559d36f2ad78c0fc431f6d52dc0e1053c95d/assets</sourceUrl>
+        <lessUrl>https://github.com/twitter/bootstrap/archive</lessUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
     </properties>
 
@@ -70,6 +71,16 @@
                             <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>download-less</id>
+                        <phase>process-resources</phase>
+                        <goals><goal>download-single</goal></goals>
+                        <configuration>
+                            <url>${lessUrl}</url>
+                            <fromFile>v${upstreamVersion}.zip</fromFile>
+                            <toFile>${project.build.directory}/${project.artifactId}Less.zip</toFile>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 
@@ -84,9 +95,15 @@
                             <target>
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="unzip LESS archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}Less.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/bootstrap" />
+                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}">
+                                      <exclude name="less/tests/**" />
+                                      <include name="less/**" />
+                                    </fileset>
                                 </move>
                             </target>
                         </configuration>
