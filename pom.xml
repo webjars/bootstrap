@@ -49,9 +49,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>2.3.0</upstreamVersion>
+        <upstreamVersion>2.3.1</upstreamVersion>
         <!-- upstreamSha is the commit on the gh-pages branch where the version is bumped: https://github.com/twitter/bootstrap/commits/gh-pages -->
-        <upstreamSha>91b92f9dd09c1794d02c6157daba5405d8f09e39</upstreamSha>
+        <upstreamSha>5652c354ea4c09dc5ee724791e30d3f60cec7f3e</upstreamSha>
         <sourceUrl>https://github.com/twitter/bootstrap/raw/${upstreamSha}/assets</sourceUrl>
         <lessUrl>https://github.com/twitter/bootstrap/archive</lessUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
