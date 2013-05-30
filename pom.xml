@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>2.3.1-2-SNAPSHOT</version>
+    <version>2.3.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -49,9 +49,9 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>2.3.1</upstreamVersion>
+        <upstreamVersion>2.3.2</upstreamVersion>
         <!-- upstreamSha is the commit on the gh-pages branch where the version is bumped: https://github.com/twitter/bootstrap/commits/gh-pages -->
-        <upstreamSha>5652c354ea4c09dc5ee724791e30d3f60cec7f3e</upstreamSha>
+        <upstreamSha>47916075854a713006d00f5c4f7b6ce32094acf4</upstreamSha>
         <sourceUrl>https://github.com/twitter/bootstrap/raw/${upstreamSha}/assets</sourceUrl>
         <lessUrl>https://github.com/twitter/bootstrap/archive</lessUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
