@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>2.3.3-SNAPSHOT</version>
+    <version>3.0.0-rc1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -49,11 +49,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>2.3.2</upstreamVersion>
-        <!-- upstreamSha is the commit on the gh-pages branch where the version is bumped: https://github.com/twitter/bootstrap/commits/gh-pages -->
-        <upstreamSha>47916075854a713006d00f5c4f7b6ce32094acf4</upstreamSha>
-        <sourceUrl>https://github.com/twitter/bootstrap/raw/${upstreamSha}/assets</sourceUrl>
-        <lessUrl>https://github.com/twitter/bootstrap/archive</lessUrl>
+        <upstreamVersion>3.0.0-rc1</upstreamVersion>
+        <sourceUrl>https://github.com/twbs/bootstrap/archive</sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
     </properties>
 
@@ -69,18 +66,8 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${sourceUrl}</url>
-                            <fromFile>bootstrap.zip</fromFile>
-                            <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>download-less</id>
-                        <phase>process-resources</phase>
-                        <goals><goal>download-single</goal></goals>
-                        <configuration>
-                            <url>${lessUrl}</url>
                             <fromFile>v${upstreamVersion}.zip</fromFile>
-                            <toFile>${project.build.directory}/${project.artifactId}Less.zip</toFile>
+                            <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
                 </executions>
@@ -97,15 +84,10 @@
                             <target>
                                 <echo message="unzip archive" />
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
-                                <echo message="unzip LESS archive" />
-                                <unzip src="${project.build.directory}/${project.artifactId}Less.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap" />
-                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}">
-                                      <exclude name="less/tests/**" />
-                                      <include name="less/**" />
-                                    </fileset>
+                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/dist" includes="js/,css/"/>
+                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/" includes="less/"/>
                                 </move>
                             </target>
                         </configuration>
