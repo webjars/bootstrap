@@ -49,7 +49,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstreamVersion>3.0.0-rc1</upstreamVersion>
+        <upstreamVersion>3.0.0-rc.2</upstreamVersion>
         <sourceUrl>https://github.com/twbs/bootstrap/archive</sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
     </properties>
