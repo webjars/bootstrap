@@ -2,7 +2,6 @@
 
 // Ensure any request for this webjar brings in jQuery.
 requirejs.config({
-    shim: {
-        bootstrap: [ 'webjars!jquery.js' ]
-    }
+    paths: { "bootstrap": webjars.path("bootstrap", "js/bootstrap") },
+    shim: { "bootstrap": [ "jquery", "webjars!jquery.js" ] }
 });
