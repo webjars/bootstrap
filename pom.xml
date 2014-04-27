@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>3.1.2-SNAPSHOT</version>
+    <version>3.1.1-1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -52,6 +52,17 @@
         <upstreamVersion>3.1.1</upstreamVersion>
         <sourceUrl>https://github.com/twbs/bootstrap/archive</sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${upstreamVersion}</destDir>
+        <requirejs>
+            {
+                "paths": {
+                    "bootstrap": "js/bootstrap",
+                    "bootstrap-css": "css/bootstrap"
+                },
+                "shim": {
+                    "bootstrap": [ "jquery" ]
+                }
+            }
+        </requirejs>
     </properties>
 
     <build>
