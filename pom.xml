@@ -129,7 +129,7 @@
                     <replacements>
                         <replacement>
                             <token>url\('?+\.\.\/fonts\/([^\s\)?#']+)[\?#]{0,2}([^';]*)+?'?\)</token>
-                            <value>url("#{resource['webjars:bootstrap/${upstreamVersion}/fonts/$1']}&amp;v=${upstreamVersion}&amp;#$2")</value>
+                            <value>url("#{resource['webjars:bootstrap/${project.version}/fonts/$1']}&amp;v=${upstreamVersion}&amp;#$2")</value>
                         </replacement>
                     </replacements>
                     <regex>true</regex>
