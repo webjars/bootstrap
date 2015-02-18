@@ -98,7 +98,7 @@
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/dist" includes="js/,css/,fonts/" />
-                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/" includes="less/" />
+                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/" includes="js/,less/" excludes="js/tests/" />
                                 </move>
                             </target>
                         </configuration>
