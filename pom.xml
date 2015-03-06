@@ -139,7 +139,28 @@
                     <unescape>true</unescape>
                 </configuration>
             </plugin>
-
+		<plugin>
+			<groupId>com.googlecode.todomap</groupId>
+			<artifactId>maven-jettygzip-plugin</artifactId>
+			<version>0.0.5</version>
+			<configuration>
+				<webappDirectory>target/classes</webappDirectory>
+				<outputDirectory>target/classes</outputDirectory>
+				<extensions>
+					<extension>js</extension>
+					<extension>css</extension>
+					<extension>less</extension>
+				</extensions>
+			</configuration>
+			<executions>
+				<execution>
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>process</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
