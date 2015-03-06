@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>3.3.2-2-SNAPSHOT</version>
+    <version>3.3.2-2</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/bootstrap</url>
         <connection>scm:git:https://github.com/webjars/bootstrap.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/bootstrap.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>bootstrap-3.3.2-2</tag>
     </scm>
 
     <developers>
@@ -93,12 +93,12 @@
                         <goals><goal>run</goal></goals>
                         <configuration>
                             <target>
-                                <echo message="unzip archive"/>
-                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}"/>
-                                <echo message="moving resources"/>
+                                <echo message="unzip archive" />
+                                <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
+                                <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/dist" includes="js/,css/,fonts/"/>
-                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/" includes="js/,less/" excludes="js/tests/"/>
+                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/dist" includes="js/,css/,fonts/" />
+                                    <fileset dir="${project.build.directory}/bootstrap-${upstreamVersion}/" includes="js/,less/" excludes="js/tests/" />
                                 </move>
                             </target>
                         </configuration>
