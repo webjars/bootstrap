@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>4.0.1-alpha.3-SNAPSHOT</version>
+    <version>3.3.7-1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -69,7 +69,7 @@
             <plugin>
                 <groupId>com.jamesward</groupId>
                 <artifactId>unsnapshot-maven-plugin</artifactId>
-                <version>0.1</version>
+                <version>0.2</version>
                 <executions>
                     <execution>
                         <phase>initialize</phase>
@@ -90,7 +90,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${sourceUrl}</url>
-                            <fromFile>v${version.unsnapshot}.zip</fromFile>
+                            <fromFile>v${version.unrevise}.zip</fromFile>
                             <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
@@ -110,8 +110,8 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-${version.unsnapshot}/dist" includes="js/,css/,fonts/" />
-                                    <fileset dir="${project.build.directory}/bootstrap-${version.unsnapshot}/" includes="js/,scss/" excludes="js/tests/" />
+                                    <fileset dir="${project.build.directory}/bootstrap-${version.unrevise}/dist"/>
+                                    <fileset dir="${project.build.directory}/bootstrap-${version.unrevise}/" includes="js/,less/" excludes="js/tests/" />
                                 </move>
                             </target>
                         </configuration>
