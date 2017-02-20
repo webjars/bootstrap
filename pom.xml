@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>4.0.1-alpha.6-SNAPSHOT</version>
+    <version>4.0.0-alpha.6-1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -90,7 +90,7 @@
                         <goals><goal>download-single</goal></goals>
                         <configuration>
                             <url>${sourceUrl}</url>
-                            <fromFile>v${version.unsnapshot}.zip</fromFile>
+                            <fromFile>v${version.unrevise}.zip</fromFile>
                             <toFile>${project.build.directory}/${project.artifactId}.zip</toFile>
                         </configuration>
                     </execution>
@@ -110,8 +110,8 @@
                                 <unzip src="${project.build.directory}/${project.artifactId}.zip" dest="${project.build.directory}" />
                                 <echo message="moving resources" />
                                 <move todir="${destDir}">
-                                    <fileset dir="${project.build.directory}/bootstrap-${version.unsnapshot}/dist" />
-                                    <fileset dir="${project.build.directory}/bootstrap-${version.unsnapshot}/" includes="js/,less/" excludes="js/tests/" />
+                                    <fileset dir="${project.build.directory}/bootstrap-${version.unrevise}/dist" />
+                                    <fileset dir="${project.build.directory}/bootstrap-${version.unrevise}/" includes="js/,less/,scss/" excludes="js/tests/"/>
                                 </move>
                             </target>
                         </configuration>
@@ -142,7 +142,7 @@
                     <replacements>
                         <replacement>
                             <token>url\('?+\.\.\/fonts\/([^\s\)?#']+)[\?#]{0,2}([^';]*)+?'?\)</token>
-                            <value>url("#{resource['webjars:bootstrap/${project.version}/fonts/$1']}&amp;v=${version.unsnapshot}&amp;#$2")</value>
+                            <value>url("#{resource['webjars:bootstrap/${project.version}/fonts/$1']}&amp;v=${version.unrevise}&amp;#$2")</value>
                         </replacement>
                     </replacements>
                     <regex>true</regex>
