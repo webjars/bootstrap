@@ -117,6 +117,9 @@
                                 <move todir="${destDir}">
                                     <fileset dir="${project.build.directory}/bootstrap-${version.unrevise}/dist" />
                                 </move>
+                                <move todir="${destDir}/scss">
+                                    <fileset dir="${project.build.directory}/bootstrap-${version.unrevise}/scss" />
+                                </move>
                             </target>
                         </configuration>
                     </execution>
