@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>3.4.0</version>
+    <version>3.4.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -36,7 +36,7 @@
         <url>http://github.com/webjars/bootstrap</url>
         <connection>scm:git:https://github.com/webjars/bootstrap.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/bootstrap.git</developerConnection>
-        <tag>bootstrap-3.4.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <developers>
