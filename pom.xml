@@ -11,7 +11,7 @@
     <groupId>org.webjars</groupId>
     <artifactId>bootstrap</artifactId>
     <name>Bootstrap</name>
-    <version>5.3.8-SNAPSHOT</version>
+    <version>5.3.8</version>
     <packaging>jar</packaging>
     <description>WebJar for Bootstrap</description>
     <url>http://webjars.org</url>
@@ -37,7 +37,7 @@
         <url>http://github.com/webjars/bootstrap</url>
         <connection>scm:git:https://github.com/webjars/bootstrap.git</connection>
         <developerConnection>scm:git:https://github.com/webjars/bootstrap.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>bootstrap-5.3.8</tag>
     </scm>
 
     <developers>
@@ -50,7 +50,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.build.outputTimestamp>1750278332</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1756301039</project.build.outputTimestamp>
         <sourceUrl>https://github.com/twbs/bootstrap/archive</sourceUrl>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
         <requirejs>
